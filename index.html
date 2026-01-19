@@ -2,71 +2,93 @@
 <html lang="uz">
 <head>
 <meta charset="UTF-8">
-<title>Mening Shaxsiy Saytim</title>
+<title>Abdulloh Begimqulov</title>
 <style>
+/* Umumiy sozlamalar */
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
     margin: 0;
     padding: 0;
-    background-color: #ffebee; /* boshlang'ich fon rangi */
-    transition: background-color 1s; /* rang o'zgarishi yumshoq bo'lsin */
+}
+
+section {
+    min-height: 100vh; /* Har bo‘lim ekran bo‘yicha to‘liq ko‘rinadi */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    transition: background-color 1s;
 }
 
 h1 {
-    color: #880e4f;
-    margin-top: 50px;
+    font-size: 40px;
+    margin-bottom: 20px;
 }
 
 p {
-    color: #4a148c;
-    font-size: 18px;
-    max-width: 600px;
-    margin: 20px auto;
+    font-size: 20px;
+    max-width: 700px;
+    text-align: center;
 }
 
-/* Rang-barab slayd uchun matn */
-.slide-text {
-    font-size: 22px;
-    font-weight: bold;
-    color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    display: inline-block;
-    transition: background-color 1s;
+img {
+    max-width: 80%;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Bo‘lim ranglari */
+#about {
+    background-color: #2196f3; /* Moviy */
+}
+
+#hobbies {
+    background-color: #4caf50; /* Yashil */
+}
+
+#school {
+    background-color: #ff9800; /* To‘q sariq */
+}
+
+#extras {
+    background-color: #9c27b0; /* Binafsha */
 }
 </style>
 </head>
 <body>
 
-<h1>Salom! 👋 Men Abdullohman</h1>
-<p>Bu mening shaxsiy saytim. Quyida matn rang-barab slayd tarzida o‘zgaradi:</p>
+<!-- About bo‘limi -->
+<section id="about">
+    <h1>Salom! Men Abdulloh Begimqulov</h1>
+    <p>Men 15 yoshdaman va bu mening shaxsiy saytım. Quyida mening qiziqishlarim, mashg‘ulotlarim va rasmlarimni ko‘rishingiz mumkin.</p>
+    <img src="men.jpg" alt="O'zimning rasmim">
+</section>
 
-<div class="slide-text" id="slide">Men web sayt yaratishni o‘rganayapman</div>
+<!-- Hobbi bo‘limi -->
+<section id="hobbies">
+    <h1>Qiziqishlarim va Hobbilaring</h1>
+    <p>Men dasturlashni, futbol o‘ynashni va tog‘larga chiqishni yoqtiraman.</p>
+    <img src="tog.jpg" alt="Tog rasmi">
+    <img src="futbol.jpg" alt="Futbol rasmi">
+</section>
 
-<script>
-// Rang-barab matn slaydi
-let slides = [
-    "Men web sayt yaratishni o‘rganayapman",
-    "Men dasturlashni yaxshi ko‘raman",
-    "Kelajakda katta developer bo‘laman",
-    "Bu sayt GitHub Pages’da ishlamoqda"
-];
+<!-- Maktab / kurslar bo‘limi -->
+<section id="school">
+    <h1>Maktab va Mashg‘ulotlar</h1>
+    <p>Men ingliz tili va matematika kurslariga boraman. Shu bilan birga kompyuter va dasturlashni o‘rganayapman.</p>
+</section>
 
-let colors = ["#f44336","#2196f3","#4caf50","#ff9800"]; // fon ranglari
-let current = 0;
-
-function showNextSlide() {
-    let slide = document.getElementById("slide");
-    slide.textContent = slides[current];
-    slide.style.backgroundColor = colors[current];
-    document.body.style.backgroundColor = colors[current] + "33"; // past fon rang
-    current = (current + 1) % slides.length;
-}
-
-// Har 3 soniyada slayd o'zgaradi
-setInterval(showNextSlide, 3000);
-</script>
+<!-- Qo‘shimcha / mashinalar bo‘limi -->
+<section id="extras">
+    <h1>Mashinalar va Qo‘shimcha</h1>
+    <p>Mashinalarga qiziqaman va ularning suratlarini saqlayman. Quyida ba’zi mashinalar rasmlari:</p>
+    <img src="mashina1.jpg" alt="Mashina rasmi">
+    <img src="mashina2.jpg" alt="Mashina rasmi">
+</section>
 
 </body>
 </html>
