@@ -1,9 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<title>Mening Shaxsiy Saytim</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #ffebee; /* boshlang'ich fon rangi */
+    transition: background-color 1s; /* rang o'zgarishi yumshoq bo'lsin */
+}
+
+h1 {
+    color: #880e4f;
+    margin-top: 50px;
+}
+
+p {
+    color: #4a148c;
+    font-size: 18px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/* Rang-barab slayd uchun matn */
+.slide-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    transition: background-color 1s;
+}
+</style>
+</head>
 <body>
 
-<h1>Salom 👋</h1>
-<p>Saytim ishlayapti 🎉</p>
+<h1>Salom! 👋 Men Abdullohman</h1>
+<p>Bu mening shaxsiy saytim. Quyida matn rang-barab slayd tarzida o‘zgaradi:</p>
+
+<div class="slide-text" id="slide">Men web sayt yaratishni o‘rganayapman</div>
+
+<script>
+// Rang-barab matn slaydi
+let slides = [
+    "Men web sayt yaratishni o‘rganayapman",
+    "Men dasturlashni yaxshi ko‘raman",
+    "Kelajakda katta developer bo‘laman",
+    "Bu sayt GitHub Pages’da ishlamoqda"
+];
+
+let colors = ["#f44336","#2196f3","#4caf50","#ff9800"]; // fon ranglari
+let current = 0;
+
+function showNextSlide() {
+    let slide = document.getElementById("slide");
+    slide.textContent = slides[current];
+    slide.style.backgroundColor = colors[current];
+    document.body.style.backgroundColor = colors[current] + "33"; // past fon rang
+    current = (current + 1) % slides.length;
+}
+
+// Har 3 soniyada slayd o'zgaradi
+setInterval(showNextSlide, 3000);
+</script>
 
 </body>
 </html>
